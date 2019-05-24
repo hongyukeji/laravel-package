@@ -1,0 +1,31 @@
+{
+    "name": "hongyukeji/laravel-package",
+    "description": "Laravel 5 package bootstraper",
+    "type": "library",
+    "require": {
+        "php": ">=7.0",
+        "illuminate/support": "5.*",
+        "consoletvs/support": "^2.2.0",
+        "composer/composer": "^1.5.1"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "shadow",
+            "email": "admin@hongyuvip.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Hongyukeji\\LaravelPackage\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Hongyukeji\\LaravelPackage\\BootpackServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev"
+}
