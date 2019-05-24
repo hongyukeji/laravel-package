@@ -22,7 +22,7 @@ class Package
         $this->description = config('bootpack.default_description');
         $this->php = config('bootpack.default_php');
         $e_name = explode('/', $name);
-        $this->namespace = ucfirst($e_name[0]) . '\\' . ucfirst($e_name[1]);
+        $this->namespace = studly_case($e_name[0]) . '\\' . studly_case($e_name[1]);
     }
 
     public function json()
@@ -48,7 +48,7 @@ class Package
             'extra' => [
                 'laravel' =>[
                     'providers' => [
-                        $this->namespace . '\\' . ucfirst(explode('/', $this->name)[1]) . 'ServiceProvider'
+                        $this->namespace . '\\' . studly_case(explode('/', $this->name)[1]) . 'ServiceProvider'
                     ]
                 ]
             ],

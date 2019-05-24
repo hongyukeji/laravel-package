@@ -87,7 +87,7 @@ class BootpackCreatePackage extends Command
 
                 Helpers::massStrReplaceFile('{{ NAMESPACE }}', $package->namespace, $path);
                 Helpers::massStrReplaceFile('{{ NAME }}', $p_name, $path);
-                Helpers::massStrReplaceFile('{{ UCNAME }}', ucfirst($p_name), $path);
+                Helpers::massStrReplaceFile('{{ UCNAME }}', studly_case($p_name), $path);
 
                 rename(
                     $path . '/src/Config/config.php',
@@ -95,31 +95,31 @@ class BootpackCreatePackage extends Command
                 );
                 rename(
                     $path . '/src/ServiceProvider.php',
-                    $path . '/src/' . ucfirst($p_name) . 'ServiceProvider.php'
+                    $path . '/src/' . studly_case($p_name) . 'ServiceProvider.php'
                 );
                 rename(
                     $path . '/src/Controllers/Controller.php',
-                    $path . '/src/Controllers/' . ucfirst($p_name) . 'Controller.php'
+                    $path . '/src/Controllers/' . studly_case($p_name) . 'Controller.php'
                 );
                 rename(
                     $path . '/src/Commands/Command.php',
-                    $path . '/src/Commands/' . ucfirst($p_name) . 'Command.php'
+                    $path . '/src/Commands/' . studly_case($p_name) . 'Command.php'
                 );
                 rename(
                     $path . '/src/Middleware/Middleware.php',
-                    $path . '/src/Middleware/' . ucfirst($p_name) . 'Middleware.php'
+                    $path . '/src/Middleware/' . studly_case($p_name) . 'Middleware.php'
                 );
                 rename(
                     $path . '/src/Migrations/2017_08_11_171401_create_some_table.php',
-                    $path . '/src/Migrations/2017_08_11_171401_create_' . ucfirst($p_name) . '_table.php'
+                    $path . '/src/Migrations/2017_08_11_171401_create_' . studly_case($p_name) . '_table.php'
                 );
                 rename(
                     $path . '/src/Contracts/Contract.php',
-                    $path . '/src/Contracts/' . ucfirst($p_name) . 'Contract.php'
+                    $path . '/src/Contracts/' . studly_case($p_name) . 'Contract.php'
                 );
                 rename(
                     $path . '/src/Classes/Class.php',
-                    $path . '/src/Classes/' . ucfirst($p_name) . 'Class.php'
+                    $path . '/src/Classes/' . studly_case($p_name) . 'Class.php'
                 );
 
                 $this->info('Yey! The package structure is ready for action!');
@@ -187,7 +187,7 @@ class BootpackCreatePackage extends Command
                     Helpers::strReplaceFile(
                         'App\\Providers\\RouteServiceProvider::class,',
                         "App\\Providers\\RouteServiceProvider::class,\n\t\t"
-                        . $package->namespace . "\\" . ucfirst($p_name) . 'ServiceProvider::class,',
+                        . $package->namespace . "\\" . studly_case($p_name) . 'ServiceProvider::class,',
                         base_path('config/app.php')
                     );
 
