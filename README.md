@@ -20,7 +20,7 @@ It features a full terminal application based on an artisan command.
 ## Installation
 
 ```
-composer require consoletvs/bootpack
+composer require hongyukeji/laravel-package
 ```
 
 Register the service provider to the current project (Not needed if using laravel 5.5+):
@@ -39,7 +39,7 @@ php artisan vendor:publish
 
 Can't be more simple... rename test/package to the vendor/packagename notation you wish to create.
 
-Example: consoletvs/bootpack
+Example: hongyukeji/laravel-package
 
 ```
 php artisan bootpack:create test/package
