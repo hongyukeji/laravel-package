@@ -16,7 +16,7 @@ class BootpackServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__.'/Config/bootpack.php' => config_path('bootpack.php'),
-        ], 'bootpack_config');
+        ], 'bootpack-config');
 
         if ($this->app->runningInConsole()) {
             $this->commands([
